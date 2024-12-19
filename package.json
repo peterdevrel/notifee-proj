@@ -3,6 +3,7 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
+    "prepare": "yarn lerna:link && lerna run prepare && yarn build:core:ios && (yarn tests_rn:ios:pod:install || true)",
     "precommit": "yarn build:all:clean && yarn prepare && yarn build:all && yarn gen:reference && yarn validate:all && yarn test:all",
     "build:all": "yarn build:core && yarn build:rn",
     "build:core": "yarn build:core:android && yarn build:core:ios",
@@ -36,7 +37,7 @@
     "lerna:link": "lerna link && lerna exec -- yarn link",
     "lerna:clean": "lerna clean",
     "gen:reference": "rimraf docs/typedoc.json docs/typedoc.min.json && node scripts/generate-typedoc.js",
-    "test:all": "yarn test:core:android && yarn tests_rn:test && yarn tests_rn:android:test",
+    "test:all": "yarn test:core:android && yarn tests_rn:test && yarn tests_rn:android:test && yarn tests_rn:ios:test",
     "test:core:android": "cd android && ./gradlew testDebugUnit",
     "tests_rn:packager": "cd tests_react_native && npx react-native start",
     "tests_rn:packager:reset-cache": "cd tests_react_native && npx react-native start --reset-cache",
@@ -126,5 +127,6 @@
     "axios": "^0.26.0",
     "shelljs": "^0.8.5"
   },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
+  "version": "0.0.0"
 }
