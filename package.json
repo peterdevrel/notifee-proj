@@ -1,5 +1,5 @@
 {
-  "name": "@peterdevrel/notifee-clone",
+  "name": "@peterdevrel/notifee-proj",
   "license": "Apache-2.0",
   "scripts": {
     "prepare": "lerna run prepare && yarn build:core:ios && (yarn tests_rn:ios:pod:install || true)",
