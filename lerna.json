@@ -7,7 +7,6 @@
     "packages/*",
     "tests_react_native"
   ],
-  "useWorkspaces": true,
   "command": {
     "publish": {
       "ignoreChanges": [
