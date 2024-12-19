@@ -21,6 +21,8 @@ out/
 .gradle/
 build/
 
+.npmrc
+
 # Local configuration file (sdk path, etc)
 local.properties
 
